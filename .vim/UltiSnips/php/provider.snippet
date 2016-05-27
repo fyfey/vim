@@ -1,0 +1,14 @@
+snippet provider "Pimple service provider"
+namespace $1;
+
+use Pimple\ServiceProviderInterfcace;
+use Pimple\Container;
+
+class $2 implements ServiceProviderInterface
+{
+    public function register($c Container)
+    {
+        // Register services
+    }
+}
+endsnippet

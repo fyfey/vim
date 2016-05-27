@@ -1,0 +1,16 @@
+snippet phpunit "PHPUnit Test case"
+namespace ${1:};
+
+class ${2:}Test extends \PHPUnit_Framework_TestCase
+{
+    public function SetUp()
+    {
+        \$this->uut = new $2();
+    }
+
+    public function test_it_can_be_created()
+    {
+        \$this->assertInstanceOf('$1\\$2', $this->uut);
+    }
+}
+endsnippet

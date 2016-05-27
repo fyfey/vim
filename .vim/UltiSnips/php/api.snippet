@@ -1,0 +1,27 @@
+snippet api "Sugar7 Rest Api"
+<?php
+
+require_once 'include/api/SugarApi.php';
+
+class $1Api extends SugarApi
+{
+    public function registerApiRest()
+    {
+        return array(
+            '$2' => array(
+                'reqType' => '${3:GET|POST}',
+                'path' => array($4),
+                'pathVars' => array($5),
+                'method' => '${6:}',
+                'shortHelp' => '$7',
+                'longHelp' => '$8'
+            )
+        );
+    }
+
+    public function $6(\$api, \$args)
+    {
+        $9
+    }
+}
+endsnippet

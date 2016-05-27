@@ -1,0 +1,50 @@
+snippet repo "Repository class"
+<?php
+
+namespace `!p
+abspath = os.path.abspath(path)
+m = re.search(r'[A-Z].+(?=/)', abspath)
+if m:
+    snip.rv = m.group().replace('/', '\\')
+`;
+
+use MysqliManager;
+use Enable\Data\BeanFactory;
+
+/**
+ * `!p snip.rv=snip.basename`
+ *
+ * @author ${2:`!p
+import subprocess
+snip.rv = subprocess.Popen(["git", "config", "user.name"], stdout=subprocess.PIPE).communicate()[0].replace("\n", "")
+ `} <${2:`!p
+import subprocess
+snip.rv = subprocess.Popen(["git", "config", "user.email"], stdout=subprocess.PIPE).communicate()[0].replace("\n", "")
+ `}>
+ */
+class `!p snip.rv=snip.basename`
+{
+    private $db;
+    private $beanFactory;
+
+    /**
+     * Set-up db and beanfactory
+     *
+     * @param MysqliManager $db          Sugar db manager
+     * @param BeanFactory   $beanFactory Bean Factory
+     */
+    public function __construct(MysqliManager $db, BeanFactory $beanFactory)
+    {
+        \$this->db = $db;
+        \$this->beanFactory = $beanFactory;
+    }
+
+    /**
+     * $1
+     */
+    public function ${1:myMethod}(${2:})
+    {
+        ${3:}
+    }
+}
+endsnippet

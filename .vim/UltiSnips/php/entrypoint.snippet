@@ -1,0 +1,6 @@
+snippet entrypoint "Entry Point"
+define('sugarEntry', true);
+include('include/entryPoint.php');
+$GLOBALS['current_user'] = BeanFactory::getBean('Users', 1);
+
+endsnippet
