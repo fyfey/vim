@@ -8,7 +8,7 @@ Plugin 'gmarik/Vundle.vim'
 
 " Plugin
 Plugin 'scrooloose/nerdtree'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tobyS/pdv'
 Plugin 'vim-scripts/tlib'
 Plugin 'SirVer/ultisnips'
@@ -25,8 +25,9 @@ Plugin 'bling/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'terryma/vim-multiple-cursors'
-Plugin 'jiangmiao/auto-pairs'
 Plugin 'zirrostig/vim-schlepp'
+Plugin 'brookhong/DBGPavim'
+Plugin 'ryanoasis/vim-devicons'
 
 " Color schemes
 Plugin 'flazz/vim-colorschemes'

@@ -10,6 +10,7 @@ set listchars=tab:>~,nbsp:_,trail:.
 set scrolloff=3
 set list
 set number
+set relativenumber
 set backspace=start,indent,eol
 set t_Co=256
 set hlsearch
@@ -17,6 +18,7 @@ set tags+=./tags.vendors,tags.vendors
 setlocal spell spelllang=en_us
 set nospell
 set wildignore+=**/.git/*,**/.node_modules/*,**/.svn/*,**/vendor/*
+set encoding=utf8
 syntax on
 
 "Colour column
@@ -85,12 +87,24 @@ function! UglifyJs()
     execute ":1,$d|0r ! uglifyjs %"
 endfunction
 
+function! NumberToggle()
+    if(&relativenumber == 1)
+        set number
+    else
+        set relativenumber
+    endif
+endfunc
+
+nnoremap <Leader-n> :call NumberToggle()<cr>
+
 " PHP Doc Blocks
 let g:pdv_template_dir = $HOME ."/.vim/pdvTemplates"
 nnoremap <buffer> <C-p> :call pdv#DocumentWithSnip()<CR>
 
 " Duplicate line
 map <S-D> Yp
+
+set guifont=Ubuntu\ Mono\ derivative\ Powerline\ Nerd\ Font\ Complete\ Mono:h11
 
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
@@ -119,7 +133,7 @@ vmap <unique> <up>    <Plug>SchleppUp
 vmap <unique> <down>  <Plug>SchleppDown
 vmap <unique> <left>  <Plug>SchleppLeft
 vmap <unique> <right> <Plug>SchleppRight
-vmap <unique> D <Plug>SchleppDup
+vmap <unique> ,D <Plug>SchleppDup
 let g:Schlepp#dupTrimWS = 1
 
 " nerdTREE
@@ -206,3 +220,8 @@ let g:debuggerMaxDepth = 5
 let g:ctrlp_map = '<Leader>t'
 let g:ctrlp_max_depth = 40
 let g:ctrlp_max_files=0
+
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
+let g:DevIconsEnableFoldersOpenClose = 1
+let g:WebDevIconsUnicodeGlyphDoubleWidth = 1
+let g:WebDevIconsNerdTreeAfterGlyphPadding = '  '
